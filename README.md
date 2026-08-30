@@ -127,18 +127,14 @@ India-Campaign-Genome-2026/
 
 ---
 
-## Upload this project to GitHub
 
-If you are new to GitHub, follow the step-by-step [beginner upload guide](docs/github_upload_guide.md).
-
----
 
 ## Reproduce the project locally
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/India-Campaign-Genome-2026.git
+git clone https://github.com/dhruvtyagi0030/India-Campaign-Genome-2026.git
 cd India-Campaign-Genome-2026
 ```
 
