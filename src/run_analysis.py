@@ -126,12 +126,17 @@ def main():
         "marketing_role_distribution.png",
     )
 
-    # Named-talent chart
-    talent_series = (
-        talent
-        .set_index("sector_group")["rate"]
-        .head(10)
+        # Named-talent chart
+    talent_plot = talent.head(10).copy()
+
+    talent_plot["plot_label"] = (
+        talent_plot["sector_group"]
+        + " (n="
+        + talent_plot["records"].astype(str)
+        + ")"
     )
+
+    talent_series = talent_plot.set_index("plot_label")["rate"]
 
     save_bar(
         talent_series,
