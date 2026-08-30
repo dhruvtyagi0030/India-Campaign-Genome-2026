@@ -1,0 +1,30 @@
+name: Validate data and analysis
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate dataset
+        run: python src/validate_data.py
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Rebuild analysis outputs
+        run: python src/run_analysis.py
