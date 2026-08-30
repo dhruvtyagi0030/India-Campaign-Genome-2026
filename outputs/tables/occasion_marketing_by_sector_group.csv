@@ -1,0 +1,12 @@
+sector_group,records,positives,rate
+Healthcare,3,2,0.6666666666666666
+Travel & Hospitality,4,2,0.5
+Financial Services,9,3,0.3333333333333333
+Media & Entertainment,3,1,0.3333333333333333
+Other,3,1,0.3333333333333333
+Technology & Electronics,11,3,0.2727272727272727
+Beauty & Personal Care,8,2,0.25
+FMCG / Food & Beverage,20,4,0.2
+Automotive & Mobility,5,1,0.2
+Retail & Commerce,5,1,0.2
+"Lifestyle, Home & Fashion",18,2,0.1111111111111111

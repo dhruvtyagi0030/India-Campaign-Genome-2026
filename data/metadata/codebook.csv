@@ -1,0 +1,24 @@
+﻿column,definition
+record_id,Unique row identifier.
+reported_date,Date the marketing action was reported by the cited source. It is not automatically the exact campaign launch date.
+brand,Brand or named partnership.
+sector,Analyst-coded business category.
+action_type,Type of observable marketing move.
+campaign_or_action,Short analyst-created label; paraphrased rather than copied headline.
+primary_objective,Analyst-coded primary marketing goal based on source description.
+occasion_context,"Festival, event, awareness day or cultural context when explicit."
+geography_focus,Geographic scope stated or clearly implied by the source.
+celebrity_or_creator,Named talent/creator when explicit; otherwise 'None stated'.
+talent_used,1 when named talent/creators are explicitly part of the action; else 0.
+primary_channel,Main execution channel when explicit; otherwise conservative analyst coding.
+creative_strategy,Analyst-coded creative mechanism.
+ai_data_angle,"1 when AI, consumer data, live data or data-led activation is material to the marketing action."
+funnel_stage,Analyst-coded dominant funnel role.
+source_publication,Publication or official source used for verification.
+source_url,Public source/archive URL.
+coding_confidence,High for explicit actions; Medium where the record is a strategic shift rather than a named campaign.
+notes,Methodological clarification where useful.
+occasion_flag,1 when an explicit occasion/event context is present.
+regional_localization,1 when the action explicitly targets a region/city rather than only national/general India.
+month,"Reported-date month, derived for analysis."
+week_start,Date helper retained for user transformation into weekly bins.

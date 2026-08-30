@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "India Campaign Genome 2026"
+message: "If you use the dataset or analytical framework, please cite this repository."
+type: dataset
+authors:
+  - family-names: "Tyagi"
+    given-names: "Dhruv"
+year: 2026
+license: CC-BY-4.0

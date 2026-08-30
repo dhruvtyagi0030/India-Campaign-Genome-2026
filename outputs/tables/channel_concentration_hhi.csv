@@ -1,0 +1,14 @@
+sector_group,records,unique_channels,channel_hhi
+Energy & Sustainability,1,1,1.0
+"Sports, Culture & Education",1,1,1.0
+Healthcare,3,3,0.3333333333333333
+Media & Entertainment,3,3,0.3333333333333333
+Other,3,3,0.3333333333333333
+Retail & Commerce,5,4,0.28
+Travel & Hospitality,4,4,0.25
+"Lifestyle, Home & Fashion",18,9,0.24074074074074076
+Beauty & Personal Care,8,6,0.21875
+Automotive & Mobility,5,5,0.20000000000000004
+Financial Services,9,7,0.18518518518518517
+Technology & Electronics,11,10,0.10743801652892562
+FMCG / Food & Beverage,20,17,0.06500000000000002

@@ -1,0 +1,14 @@
+sector_group,records,unique_strategies,creative_entropy_bits,creative_diversity_normalized
+"Lifestyle, Home & Fashion",18,18,4.169925001442313,1.0000000000000002
+Technology & Electronics,11,11,3.459431618637298,1.0000000000000002
+FMCG / Food & Beverage,20,20,4.321928094887363,1.0
+Beauty & Personal Care,8,8,3.0,1.0
+Automotive & Mobility,5,5,2.321928094887362,1.0
+Retail & Commerce,5,5,2.321928094887362,1.0
+Travel & Hospitality,4,4,2.0,1.0
+Financial Services,9,9,3.169925001442312,0.9999999999999999
+Healthcare,3,3,1.584962500721156,0.9999999999999999
+Media & Entertainment,3,3,1.584962500721156,0.9999999999999999
+Other,3,3,1.584962500721156,0.9999999999999999
+Energy & Sustainability,1,1,-0.0,0.0
+"Sports, Culture & Education",1,1,-0.0,0.0
