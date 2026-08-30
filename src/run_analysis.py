@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -18,8 +19,15 @@ TABLES.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)
 
 
-def save_bar(series: pd.Series, title: str, xlabel: str, filename: str, horizontal: bool = True):
+def save_bar(
+    series: pd.Series,
+    title: str,
+    xlabel: str,
+    filename: str,
+    horizontal: bool = True,
+):
     plt.figure(figsize=(10, 6))
+
     if horizontal:
         series.sort_values().plot(kind="barh")
         plt.xlabel(xlabel)
@@ -29,6 +37,7 @@ def save_bar(series: pd.Series, title: str, xlabel: str, filename: str, horizont
         plt.ylabel(xlabel)
         plt.xlabel("")
         plt.xticks(rotation=35, ha="right")
+
     plt.title(title)
     plt.tight_layout()
     plt.savefig(FIGURES / filename, dpi=180, bbox_inches="tight")
@@ -38,43 +47,92 @@ def save_bar(series: pd.Series, title: str, xlabel: str, filename: str, horizont
 def main():
     df = pd.read_csv(RAW)
     df = enrich(df)
+
     df.to_csv(PROCESSED, index=False)
 
+    # Standardized marketing-role distribution
     role_distribution = (
-    df["marketing_role"]
-    .value_counts()
-    .rename_axis("marketing_role")
-    .reset_index(name="records")
-)
+        df["marketing_role"]
+        .value_counts()
+        .rename_axis("marketing_role")
+        .reset_index(name="records")
+    )
 
-role_distribution.to_csv(
-    TABLES / "marketing_role_distribution.csv",
-    index=False
-)
+    role_distribution.to_csv(
+        TABLES / "marketing_role_distribution.csv",
+        index=False,
+    )
 
-    talent = rate_by_group(df, "sector_group", "talent_used", min_n=3)
-    talent.to_csv(TABLES / "celebrity_dependency_by_sector_group.csv", index=False)
+    # Named-talent dependency
+    talent = rate_by_group(
+        df,
+        "sector_group",
+        "talent_used",
+        min_n=3,
+    )
 
-    occasion = rate_by_group(df, "sector_group", "occasion_flag", min_n=3)
-    occasion.to_csv(TABLES / "occasion_marketing_by_sector_group.csv", index=False)
+    talent.to_csv(
+        TABLES / "celebrity_dependency_by_sector_group.csv",
+        index=False,
+    )
 
-    ai_data = rate_by_group(df, "sector_group", "ai_data_angle", min_n=3)
-    ai_data.to_csv(TABLES / "ai_data_activation_by_sector_group.csv", index=False)
+    # Occasion marketing
+    occasion = rate_by_group(
+        df,
+        "sector_group",
+        "occasion_flag",
+        min_n=3,
+    )
 
+    occasion.to_csv(
+        TABLES / "occasion_marketing_by_sector_group.csv",
+        index=False,
+    )
+
+    # AI/data activation
+    ai_data = rate_by_group(
+        df,
+        "sector_group",
+        "ai_data_angle",
+        min_n=3,
+    )
+
+    ai_data.to_csv(
+        TABLES / "ai_data_activation_by_sector_group.csv",
+        index=False,
+    )
+
+    # Channel concentration
     hhi = channel_hhi(df)
-    hhi.to_csv(TABLES / "channel_concentration_hhi.csv", index=False)
 
+    hhi.to_csv(
+        TABLES / "channel_concentration_hhi.csv",
+        index=False,
+    )
+
+    # Creative diversity
     diversity = creative_diversity(df)
-    diversity.to_csv(TABLES / "creative_diversity.csv", index=False)
 
-        save_bar(
-    df["marketing_role"].value_counts(),
-    "Observed Marketing Actions by Standardized Marketing Role",
-    "Number of coded actions",
-    "marketing_role_distribution.png",
-)
+    diversity.to_csv(
+        TABLES / "creative_diversity.csv",
+        index=False,
+    )
 
-    talent_series = talent.set_index("sector_group")["rate"].head(10)
+    # Marketing-role chart
+    save_bar(
+        df["marketing_role"].value_counts(),
+        "Observed Marketing Actions by Standardized Marketing Role",
+        "Number of coded actions",
+        "marketing_role_distribution.png",
+    )
+
+    # Named-talent chart
+    talent_series = (
+        talent
+        .set_index("sector_group")["rate"]
+        .head(10)
+    )
+
     save_bar(
         talent_series,
         "Named-Talent Dependency by Broad Sector Group",
@@ -82,7 +140,12 @@ role_distribution.to_csv(
         "celebrity_dependency.png",
     )
 
-    month_occ = df.groupby("reported_month")["occasion_flag"].mean()
+    # Occasion-linked activity by month
+    month_occ = (
+        df.groupby("reported_month")["occasion_flag"]
+        .mean()
+    )
+
     save_bar(
         month_occ,
         "Occasion-Linked Share by Reported Month",
@@ -91,11 +154,13 @@ role_distribution.to_csv(
         horizontal=False,
     )
 
+    # AI/data actions by sector
     ai_counts = (
         df[df["ai_data_angle"] == 1]["sector_group"]
         .value_counts()
         .head(10)
     )
+
     save_bar(
         ai_counts,
         "AI/Data-Led Marketing Actions by Broad Sector Group",
