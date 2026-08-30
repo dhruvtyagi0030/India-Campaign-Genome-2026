@@ -40,8 +40,17 @@ def main():
     df = enrich(df)
     df.to_csv(PROCESSED, index=False)
 
-    funnel = df["funnel_stage"].value_counts().rename_axis("funnel_stage").reset_index(name="records")
-    funnel.to_csv(TABLES / "funnel_distribution.csv", index=False)
+    role_distribution = (
+    df["marketing_role"]
+    .value_counts()
+    .rename_axis("marketing_role")
+    .reset_index(name="records")
+)
+
+role_distribution.to_csv(
+    TABLES / "marketing_role_distribution.csv",
+    index=False
+)
 
     talent = rate_by_group(df, "sector_group", "talent_used", min_n=3)
     talent.to_csv(TABLES / "celebrity_dependency_by_sector_group.csv", index=False)
@@ -58,12 +67,12 @@ def main():
     diversity = creative_diversity(df)
     diversity.to_csv(TABLES / "creative_diversity.csv", index=False)
 
-    save_bar(
-        df["funnel_stage"].value_counts(),
-        "Observed Marketing Actions by Funnel Stage",
-        "Number of coded actions",
-        "funnel_distribution.png",
-    )
+        save_bar(
+    df["marketing_role"].value_counts(),
+    "Observed Marketing Actions by Standardized Marketing Role",
+    "Number of coded actions",
+    "marketing_role_distribution.png",
+)
 
     talent_series = talent.set_index("sector_group")["rate"].head(10)
     save_bar(
