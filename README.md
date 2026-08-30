@@ -118,7 +118,7 @@ India-Campaign-Genome-2026/
 ├── docs/
 │   ├── methodology.md
 │   ├── limitations.md
-│   └── project_brief.md
+│   
 ├── .github/workflows/
 │   └── validate.yml         # CI validation on every push/PR
 ├── requirements.txt
