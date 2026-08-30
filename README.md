@@ -1,14 +1,14 @@
-# India Campaign Genome 2026 🇮🇳
+# India Campaign Genome 2026 
 
-### A reproducible 90-day marketing-intelligence study of publicly reported Indian brand activity
+**A reproducible 90-day public-source reconstruction of Indian brand marketing activity**
 
 **91 marketing actions · 88 brands/partnerships · 23 raw variables · June–August 2026**
 
-This project reconstructs publicly reported marketing activity in India and converts fragmented campaign evidence into a structured dataset for **marketing analytics, brand strategy, consumer-culture research, and competitive intelligence**.
+This project reconstructs publicly reported Indian marketing activity from fragmented industry and official-source evidence, then converts it into a structured dataset for marketing analytics, brand strategy, consumer-culture research, and competitive intelligence.
 
 The goal is deliberately different from a standard downloaded sales dataset: the main contribution is the **creation, documentation, validation, and analysis of the marketing-intelligence dataset itself**.
 
-> **Methodology note:** this is a retrospective public-source reconstruction, not a claim of continuous real-time monitoring. `reported_date` is the reporting/publication date and can differ from the exact launch date. No spend, ROI, impressions, reach, engagement, or sales-lift numbers have been fabricated.
+> **Methodology note:** this is a retrospective public-source reconstruction, not a claim of continuous real-time monitoring. `reported_date` is the reporting/publication date and can differ from the exact launch date. No spend, ROI, impressions, reach, engagement, or sales lift numbers have been fabricated.
 
 ---
 
@@ -30,7 +30,7 @@ The goal is deliberately different from a standard downloaded sales dataset: the
 |---|---:|
 | Observed marketing actions | 91 |
 | Unique brands / partnerships | 88 |
-| Granular sector labels | 69 |
+| Source-coded sector labels | 69 |
 | Named-talent actions | 36 (39.6%) |
 | Occasion-linked actions | 23 (25.3%) |
 | AI/data-led actions | 15 (16.5%) |
@@ -38,6 +38,8 @@ The goal is deliberately different from a standard downloaded sales dataset: the
 | Reported-date range | 1 Jun – 29 Aug 2026 |
 
 These are **sample descriptors**, not population estimates for all Indian advertising.
+
+The raw `sector` field intentionally preserves detailed category distinctions from the underlying marketing actions. For comparative analysis, these granular labels are reproducibly consolidated into broader `sector_group` categories in `src/features.py`. This preserves source-level detail while avoiding unreliable comparisons between extremely small sector categories.
 
 ---
 
