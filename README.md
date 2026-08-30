@@ -43,9 +43,9 @@ These are **sample descriptors**, not population estimates for all Indian advert
 
 ## Key analytical outputs
 
-### Funnel distribution
+### Marketing-role distribution
 
-![Observed marketing actions by funnel stage](outputs/figures/funnel_distribution.png)
+![Observed marketing actions by standardized marketing role](outputs/figures/marketing_role_distribution.png)
 
 ### Named-talent dependency
 
