@@ -61,6 +61,19 @@ The raw `sector` field intentionally preserves detailed category distinctions fr
 
 ![AI and data-led marketing actions](outputs/figures/ai_data_actions.png)
 
+## Key findings
+
+Within this 91-action public-source sample:
+
+- **Awareness dominates the observed marketing mix:** 43 of 91 actions (47.3%) were classified as awareness-oriented, compared with 23 consideration actions and 11 conversion/acquisition actions.
+- **Named talent is common but unevenly distributed:** 36 actions (39.6%) used a named celebrity, athlete, creator, or other public figure. Beauty & Personal Care and Automotive & Mobility showed the highest observed dependency rates, although sector-level sample sizes vary substantially.
+- **Occasion marketing is material:** 23 actions (25.3%) were explicitly connected to festivals, awareness days, sports moments, cultural events, or other occasions.
+- **Occasion-linked activity increased sharply in August:** roughly 30% of observed August actions were occasion-linked, compared with lower shares in June and July.
+- **AI/data-led execution remains concentrated:** 15 actions (16.5%) materially incorporated AI or data into marketing execution, with Technology & Electronics accounting for the largest share of these observed actions.
+- **Explicit regional localization was relatively selective:** 12 actions (13.2%) targeted a particular city, state, region, or regional cultural context.
+
+These findings describe the **observed sample only** and should not be interpreted as population estimates for the Indian advertising industry.
+
 ---
 
 ## Analytical metrics implemented
