@@ -216,22 +216,21 @@ Full caveats are documented in [docs/limitations.md](docs/limitations.md).
 
 ---
 
-## Portfolio value
+## Skills demonstrated
 
-This project demonstrates:
 
-- marketing research design;
-- original dataset construction;
-- categorical coding and data normalization;
-- marketing funnel analysis;
-- celebrity/creator strategy analysis;
-- festival and localization analysis;
-- reproducible Python analytics;
-- custom metrics (HHI, entropy, dependency rates);
-- data-quality validation and automated testing;
-- responsible interpretation of imperfect real-world marketing data.
+- marketing research design
+- original dataset construction
+- categorical coding and data normalization
+- standardized marketing-role analysis
+- celebrity/creator strategy analysis
+- festival and localization analysis
+- reproducible Python analytics
+- analytical metrics including HHI, entropy, and dependency rates
+- data-quality validation and automated testing
+- responsible interpretation of imperfect real-world marketing data
 
-A concise admissions/resume framing is available in [docs/project_brief.md](docs/project_brief.md).
+
 
 ---
 
