@@ -17,7 +17,7 @@ FIGURES = ROOT / "outputs" / "figures"
 
 TABLES.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)
-
+PROCESSED.parent.mkdir(parents=True, exist_ok=True)
 
 def save_bar(
     series: pd.Series,
