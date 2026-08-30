@@ -61,9 +61,9 @@ These are **sample descriptors**, not population estimates for all Indian advert
 
 ---
 
-## Original metrics implemented
+## Analytical metrics implemented
 
-### 1. Celebrity Dependency Rate
+### 1. Named-Talent Dependency Rate
 
 `named-talent actions / all observed actions in a group`
 
@@ -75,11 +75,11 @@ Useful for comparing how strongly different sector groups lean on celebrities or
 
 Captures campaign linkage to festivals, awareness days, sporting moments, cultural events, and other explicit occasions.
 
-### 3. AI/Data Activation Rate
+### 3. AI & Data-in-Marketing Rate
 
 `AI-or-data-led actions / all observed actions`
 
-The coding aims to capture cases where AI or data materially enters the marketing execution rather than merely appearing as a topic.
+Measures the share of observed actions in which AI or data is materially involved in marketing execution, targeting, media, content, or consumer experience—not merely mentioned as a theme.
 
 ### 4. Channel Concentration HHI
 
@@ -89,7 +89,7 @@ Higher HHI indicates a more concentrated observed channel mix.
 
 ### 5. Creative Strategy Diversity
 
-Shannon entropy is calculated over the coded `creative_strategy` distribution, with a normalized 0–1 version for easier comparison.
+Shannon entropy is calculated over the coded creative_strategy distribution, with a normalized 0–1 score used to compare creative-strategy diversity across sector groups.
 
 ---
 
